@@ -1,0 +1,16 @@
+{
+  "name": "poebot",
+  "version": "1.0.0",
+  "description": "Poe Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bebolicious",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "jsdom": "^16.4.0",
+    "node-fetch": "^2.6.1"
+  }
+}
