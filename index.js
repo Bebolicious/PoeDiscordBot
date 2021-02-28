@@ -8,33 +8,7 @@ const inputPrefix = '$';
 client.once('ready', () => {
     console.log('PoeBot Connected to host');
     console.log('Setting up handlers...');
-    //dailyTest();
 });
-
-function GetappId() {
-    
-}
-
-// function dailyTest() {
-//     const fetch = require('node-fetch');
-//     const JSDOM = require('jsdom').JSDOM;
-//     let url = 'https://www.poelab.com/kddzd/';
-//     fetch(url)
-//         .then(resp => resp.text())
-//         .then(text => {
-//             let dom = new JSDOM(text)
-//             let {
-//                 document
-//             } = dom.window;
-//             const img = document.querySelector('div#regular-container').innerHTML;
-//             let regex = new RegExp('(http|ftp|https):(..www.*.jpg)');
-//             let imageUrl = img.match(regex)[0];
-//             console.log('Daily uberlab image url: ' + imageUrl);
-//             return;
-//         }).catch(function (err) {
-//             console.warn('Something went wrong.', err);
-//         });;
-// }
 
 client.on('message', message => {
     if (!message.content.startsWith(inputPrefix) || message.author.bot) {
@@ -50,7 +24,7 @@ client.on('message', message => {
     const input = args.shift().toLowerCase();
 
     if (input === 'online?' && config) {
-        message.channel.send('I am actually up and running version: ' + v + ' from: ' + host)
+        message.channel.send('I am actually up and running version: ' + v + ' from: ' + host);
     };
 
     if (input === 'getchar') {
@@ -129,7 +103,7 @@ client.on('message', message => {
         fetch(url)
             .then(resp => resp.text())
             .then(text => {
-                let dom = new JSDOM(text)
+                let dom = new JSDOM(text);
                 let {
                     document
                 } = dom.window;
@@ -141,7 +115,5 @@ client.on('message', message => {
             });
     }
 });
-
-
 
 client.login(config.secret);
